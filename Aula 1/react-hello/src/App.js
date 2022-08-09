@@ -1,14 +1,17 @@
 import { useState } from "react";
 import Header from "./components/Heander";
 import Main from "./components/Main";
+import TextInput from "./components/TextInput";
 
 export default function App() {
+  //modo de usar useState não usual:
   // const state = useState("Douglas");
   // const name = state[0];
   // const setName = state[1];
+
+  //Formato usual:
   const [name, setName] = useState("Seu nome");
-  function handleNameChange(event) {
-    const newName = event.currentTarget.value;
+  function handleNameChange(newName) {
     setName(newName);
   }
   console.log();
@@ -19,22 +22,14 @@ export default function App() {
       <Header>Componente Header - Porjeto React Hello!</Header>
 
       <Main>
-        <div className="flex flex-col my-4">
-          <label className="text-sm mb-1" htmlFor="inputName">
-            Digite seu nome:{" "}
-          </label>
-          <input
-            autoFocus
-            id="inputName"
-            className="border p-1"
-            type="text"
-            value={name}
-            onChange={handleNameChange}
-          />
-        </div>
+        <TextInput
+          labelDecription="Digite seu nome: "
+          inputValue={name}
+          onInputChange={handleNameChange}
+        />
 
         <p>
-          O meu nome é {name}, com {name.length} caracteres, e você te {"X"}{" "}
+          O meu nome é {name}, com {name.length} caracteres, e você tem {"X "}
           anos
         </p>
       </Main>
