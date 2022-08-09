@@ -4,6 +4,7 @@ import DateInput from "./components/DateInput";
 import Header from "./components/Heander";
 import Main from "./components/Main";
 import TextInput from "./components/TextInput";
+import { getAgeFrom } from "./helpers/dateHelper";
 
 export default function App() {
   //modo de usar useState não usual:
@@ -13,7 +14,7 @@ export default function App() {
 
   //Formato usual:
   const [name, setName] = useState("Seu nome");
-  const [date, setDate] = useState();
+  const [date, setDate] = useState(" 2022-01-01");
 
   function handleNameChange(newName) {
     setName(newName);
@@ -26,7 +27,7 @@ export default function App() {
   return (
     //Fragment <> ou <Fragment>
     <>
-      <Header>Componente Header - Porjeto React Hello!</Header>
+      <Header>Componente Header - Projeto React Hello!</Header>
 
       <Main>
         <TextInput
@@ -41,8 +42,8 @@ export default function App() {
         />
 
         <p>
-          O meu nome é {name}, com {name.length} caracteres, e você nasceu em{" "}
-          {date}.
+          O meu nome é {name}, com {name.length} caracteres, e tem{" "}
+          {getAgeFrom(date)} anos.
         </p>
       </Main>
     </>
