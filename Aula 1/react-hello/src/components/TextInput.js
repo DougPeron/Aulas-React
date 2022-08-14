@@ -2,6 +2,7 @@ function TextInput({
   labelDecription = "Descrição do label",
   inputValue = "Valor do input",
   onInputChange = null,
+  autoFocus = true,
 }) {
   function handleInputChange({ currentTarget }) {
     if (onInputChange) {
