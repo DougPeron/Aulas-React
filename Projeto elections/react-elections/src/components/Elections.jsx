@@ -16,7 +16,6 @@ function Elections({ children }) {
   function filtro(elections) {
     return elections.cityId === allInformation.cities[2].id;
   }
-  let filteredCity = allInformation.election.filter(filtro);
 
   return <span></span>;
 }

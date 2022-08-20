@@ -14,6 +14,11 @@ function ReactCountriesPage() {
   function handleCityChange(newCity) {
     setCity(newCity);
   }
+  const [cityId, setCityId] = useState("");
+
+  function handleCityIdChange(newCityId) {
+    setCityId(newCityId);
+  }
 
   return (
     <>
@@ -24,6 +29,7 @@ function ReactCountriesPage() {
           labelDecription="Pesquise a Cidade"
           inputValue={city}
           onInputChange={handleCityChange}
+          onInputIdChange={handleCityIdChange}
           autoFocus
         />
 

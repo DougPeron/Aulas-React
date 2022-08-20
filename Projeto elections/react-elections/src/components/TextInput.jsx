@@ -1,31 +1,33 @@
 import { allInformation } from "../data/allInformation";
 function TextInput({
+  id = null,
   labelDecription = "Descrição do label",
   inputValue = "Valor do input",
   onInputChange = null,
   autoFocus = true,
 }) {
-  function handlerCountrie({ currentTarget }) {
+  function handlerCityChanges({ currentTarget }) {
     if (onInputChange) {
-      const newName = currentTarget.value;
-      onInputChange(newName);
+      const newCity = currentTarget.value;
+      onInputChange(newCity);
     }
   }
+
   return (
     <div className="flex flex-col my-4">
       <label className="text-sm mb-1" htmlFor="inputName">
         {labelDecription}
       </label>
       <select
+        id={handlerCityChanges}
         autoFocus
-        id="inputName"
         className="border p-1"
         type="text"
         value={inputValue}
-        onChange={handlerCountrie}
+        onChange={handlerCityChanges}
       >
         {allInformation.cities.map((city) => {
-          return <option>{city.name}</option>;
+          return <option id={city.id}>{city.name}</option>;
         })}
       </select>
     </div>
