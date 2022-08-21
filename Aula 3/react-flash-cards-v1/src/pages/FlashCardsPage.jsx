@@ -13,7 +13,7 @@ function FlashCardsPage() {
   function handleButtonClick() {
     const shuflleCards = helperShuffleArray(allCards);
     setAllCards(shuflleCards);
-    console.log(setAllCards);
+    console.log(allCards);
   }
   return (
     <>

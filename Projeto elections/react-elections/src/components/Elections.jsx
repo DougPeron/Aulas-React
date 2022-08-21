@@ -2,8 +2,7 @@ import { allInformation } from "../data/allInformation";
 
 function Elections({ children }) {
   allInformation.election.map((elections) => {
-    const { id, cityId, candidateId, votes } = elections;
-    return elections;
+    return console.log(elections.cityId);
   });
   allInformation.cities.map((city) => {
     if ({ children } === city.name) {
