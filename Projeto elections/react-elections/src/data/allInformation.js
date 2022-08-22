@@ -292,3 +292,12 @@ export const allInformation = {
     },
   ],
 };
+
+{allInformation.election.map((item) => {
+  if(item.candidateId === candidates.id){
+    const returnedTarget = Object.assign(item, candidates.name) 
+    return returnedTarget;
+  }
+}
+
+)}

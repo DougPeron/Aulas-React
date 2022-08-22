@@ -10,7 +10,13 @@ function Candidates(id) {
     }
     return cityElections.sort();
   });
-
+  
   return cityElections;
+
 }
 export default Candidates;
+/*{candidates.map((item) => {
+    const returnedTarget = Object.assign(item, "s");
+    return console.log(returnedTarget);
+  });
+  }*/
