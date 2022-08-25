@@ -4,7 +4,16 @@ function Flashcard({
   title = "Titulo card",
   description = "Descrição do card",
 }) {
-  const [showTitle, setShowTitle] = useState(true);
+  const [showTitle, setShowTitle] = useState(showFlashCardTitle);
+
+  useEffect(() => {
+    setShowTitle(showFlashCardTitle);
+  }, [showFlashCardTitle]);
+
+  function handleCardClick() {
+    // setShowTitle(!showTitle);
+    setShowTitle(currentShowTitle => !currentShowTitle);
+  }
   const fontSizeClassName = showTitle ? "text-xl" : "text-sm";
 
   function handleCardClick() {
